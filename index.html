@@ -60,7 +60,7 @@
         }
         var map = L.map('map', {
             zoomControl:false, maxZoom:28, minZoom:1
-        }).fitBounds([[-7.898890427190964,110.37368827470895],[-5.730521100990901,114.81706804151237]]);
+        }).fitBounds([[-7.838875882097162,111.54876853417574],[-6.7558903620064354,113.76800115731248]]);
         var hash = new L.Hash(map);
         map.attributionControl.setPrefix('<a href="https://github.com/tomchadwin/qgis2web" target="_blank">qgis2web</a> &middot; <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a> &middot; <a href="https://qgis.org">QGIS</a>');
         var autolinker = new Autolinker({truncate: {length: 30, location: 'smart'}});
@@ -108,10 +108,10 @@
         var bounds_group = new L.featureGroup([]);
         function setBounds() {
         }
-        map.createPane('pane_GoogleRoad_0');
-        map.getPane('pane_GoogleRoad_0').style.zIndex = 400;
-        var layer_GoogleRoad_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=m&x={x}&y={y}&z={z}', {
-            pane: 'pane_GoogleRoad_0',
+        map.createPane('pane_GoogleHybrid_0');
+        map.getPane('pane_GoogleHybrid_0').style.zIndex = 400;
+        var layer_GoogleHybrid_0 = L.tileLayer('https://mt1.google.com/vt/lyrs=y&x={x}&y={y}&z={z}', {
+            pane: 'pane_GoogleHybrid_0',
             opacity: 1.0,
             attribution: '<a href="https://www.google.at/permissions/geoguidelines/attr-guide.html">Map data ©2015 Google</a>',
             minZoom: 1,
@@ -119,8 +119,8 @@
             minNativeZoom: 0,
             maxNativeZoom: 20
         });
-        layer_GoogleRoad_0;
-        map.addLayer(layer_GoogleRoad_0);
+        layer_GoogleHybrid_0;
+        map.addLayer(layer_GoogleHybrid_0);
         function pop_Triwulan4_1(feature, layer) {
             layer.on({
                 mouseout: function(e) {
@@ -185,7 +185,22 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(51,160,44,1.0)',
+                fillColor: 'rgba(255,255,0,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'X1, X2, X3, X5':
+                    return {
+                pane: 'pane_Triwulan4_1',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(165,42,42,1.0)',
                 interactive: true,
             }
                     break;
@@ -204,7 +219,7 @@
                 interactive: true,
             }
                     break;
-                case 'X2, X3, X5':
+                case 'X1, X3':
                     return {
                 pane: 'pane_Triwulan4_1',
                 opacity: 1,
@@ -215,37 +230,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(230,230,250,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'X2, X4, X5':
-                    return {
-                pane: 'pane_Triwulan4_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(255,165,0,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'X3, X5':
-                    return {
-                pane: 'pane_Triwulan4_1',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(64,224,208,1.0)',
+                fillColor: 'rgba(0,0,128,1.0)',
                 interactive: true,
             }
                     break;
@@ -344,11 +329,11 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,0,255,1.0)',
+                fillColor: 'rgba(255,0,0,1.0)',
                 interactive: true,
             }
                     break;
-                case 'X2, X3, X4, X5':
+                case 'X2, X4, X5':
                     return {
                 pane: 'pane_Triwulan3_2',
                 opacity: 1,
@@ -359,11 +344,11 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(0,255,255,1.0)',
+                fillColor: 'rgba(255,165,0,1.0)',
                 interactive: true,
             }
                     break;
-                case 'X3':
+                case 'X5':
                     return {
                 pane: 'pane_Triwulan3_2',
                 opacity: 1,
@@ -375,21 +360,6 @@
                 fill: true,
                 fillOpacity: 1,
                 fillColor: 'rgba(0,0,255,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'X3, X4, X5':
-                    return {
-                pane: 'pane_Triwulan3_2',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(128,128,128,1.0)',
                 interactive: true,
             }
                     break;
@@ -462,7 +432,7 @@
 
         function style_Triwulan2_3_0(feature) {
             switch(String(feature.properties['Triwulan 2'])) {
-                case 'X1, X2, X4, X5':
+                case 'Tidak ada Variabel yang Signifikan':
                     return {
                 pane: 'pane_Triwulan2_3',
                 opacity: 1,
@@ -473,22 +443,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,255,0,1.0)',
-                interactive: true,
-            }
-                    break;
-                case 'X1, X2, X5':
-                    return {
-                pane: 'pane_Triwulan2_3',
-                opacity: 1,
-                color: 'rgba(35,35,35,1.0)',
-                dashArray: '',
-                lineCap: 'butt',
-                lineJoin: 'miter',
-                weight: 1.0, 
-                fill: true,
-                fillOpacity: 1,
-                fillColor: 'rgba(128,0,128,1.0)',
+                fillColor: 'rgba(255,255,255,1.0)',
                 interactive: true,
             }
                     break;
@@ -503,11 +458,11 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,0,255,1.0)',
+                fillColor: 'rgba(255,0,0,1.0)',
                 interactive: true,
             }
                     break;
-                case 'X3, X5':
+                case 'X2, X4':
                     return {
                 pane: 'pane_Triwulan2_3',
                 opacity: 1,
@@ -518,11 +473,11 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(64,224,208,1.0)',
+                fillColor: 'rgba(255,0,255,1.0)',
                 interactive: true,
             }
                     break;
-                case 'X4, X5':
+                case 'X3':
                     return {
                 pane: 'pane_Triwulan2_3',
                 opacity: 1,
@@ -537,7 +492,7 @@
                 interactive: true,
             }
                     break;
-                case 'X5':
+                case 'X3, X5':
                     return {
                 pane: 'pane_Triwulan2_3',
                 opacity: 1,
@@ -548,7 +503,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,0,0,1.0)',
+                fillColor: 'rgba(128,128,128,1.0)',
                 interactive: true,
             }
                     break;
@@ -632,7 +587,7 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(248,248,248,1.0)',
+                fillColor: 'rgba(255,255,255,1.0)',
                 interactive: true,
             }
                     break;
@@ -647,7 +602,22 @@
                 weight: 1.0, 
                 fill: true,
                 fillOpacity: 1,
-                fillColor: 'rgba(255,0,255,1.0)',
+                fillColor: 'rgba(255,0,0,1.0)',
+                interactive: true,
+            }
+                    break;
+                case 'X2, X5':
+                    return {
+                pane: 'pane_Triwulan1_4',
+                opacity: 1,
+                color: 'rgba(35,35,35,1.0)',
+                dashArray: '',
+                lineCap: 'butt',
+                lineJoin: 'miter',
+                weight: 1.0, 
+                fill: true,
+                fillOpacity: 1,
+                fillColor: 'rgba(0,255,255,1.0)',
                 interactive: true,
             }
                     break;
@@ -668,11 +638,11 @@
         bounds_group.addLayer(layer_Triwulan1_4);
         map.addLayer(layer_Triwulan1_4);
         var overlaysTree = [
-            {label: 'Triwulan 1<br /><table><tr><td style="text-align: center;"><img src="legend/Triwulan1_4_TidakadaVariabelyangSignifikan0.png" /></td><td>Tidak ada Variabel yang Signifikan</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan1_4_X21.png" /></td><td>X2</td></tr></table>', layer: layer_Triwulan1_4},
-            {label: 'Triwulan 2<br /><table><tr><td style="text-align: center;"><img src="legend/Triwulan2_3_X1X2X4X50.png" /></td><td>X1, X2, X4, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan2_3_X1X2X51.png" /></td><td>X1, X2, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan2_3_X22.png" /></td><td>X2</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan2_3_X3X53.png" /></td><td>X3, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan2_3_X4X54.png" /></td><td>X4, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan2_3_X55.png" /></td><td>X5</td></tr></table>', layer: layer_Triwulan2_3},
-            {label: 'Triwulan 3<br /><table><tr><td style="text-align: center;"><img src="legend/Triwulan3_2_TidakadaVariabelyangSignifikan0.png" /></td><td>Tidak ada Variabel yang Signifikan</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan3_2_X21.png" /></td><td>X2</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan3_2_X2X3X4X52.png" /></td><td>X2, X3, X4, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan3_2_X33.png" /></td><td>X3</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan3_2_X3X4X54.png" /></td><td>X3, X4, X5</td></tr></table>', layer: layer_Triwulan3_2},
-            {label: 'Triwulan 4<br /><table><tr><td style="text-align: center;"><img src="legend/Triwulan4_1_X10.png" /></td><td>X1</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan4_1_X1X2X51.png" /></td><td>X1, X2, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan4_1_X2X3X52.png" /></td><td>X2, X3, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan4_1_X2X4X53.png" /></td><td>X2, X4, X5</td></tr><tr><td style="text-align: center;"><img src="legend/Triwulan4_1_X3X54.png" /></td><td>X3, X5</td></tr></table>', layer: layer_Triwulan4_1},
-            {label: "Google Road", layer: layer_GoogleRoad_0, radioGroup: 'bm' },]
+            {label: 'Triwulan 1<br /><table><tr><td style="text-align: center;">', layer: layer_Triwulan1_4},
+            {label: 'Triwulan 2<br /><table><tr><td style="text-align: center;">', layer: layer_Triwulan2_3},
+            {label: 'Triwulan 3<br /><table><tr><td style="text-align: center;">', layer: layer_Triwulan3_2},
+            {label: 'Triwulan 4<br /><table><tr><td style="text-align: center;">', layer: layer_Triwulan4_1},
+            {label: "Google Hybrid", layer: layer_GoogleHybrid_0, radioGroup: 'bm' },]
         var lay = L.control.layers.tree(null, overlaysTree,{
             //namedToggle: true,
             //selectorBack: false,
